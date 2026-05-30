@@ -4,6 +4,6 @@ project(SystemMonitor)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(sysmon src/main.cpp src/monitor_memory.cpp src/monitor_cpu.cpp)
+add_executable(sysmon src/main.cpp src/monitor_memory.cpp src/monitor_cpu.cpp src/monitor_net.cpp)
 
 target_include_directories(sysmon PRIVATE include)
