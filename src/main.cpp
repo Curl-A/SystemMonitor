@@ -1,21 +1,20 @@
 #include<iostream>
 #include<thread>
 #include<chrono>
-#include "monitor_memory.h"
-#include "monitor_cpu.h"
-#include "monitor_net.h"
+#include "metrics.h"
 int main() 
 {
+        metricInfo metrics;
 	while(true) {
 	    system("clear");
-
+           
 	    std::cout<<"Monitoring my system"<<std::endl;
+	    metrics = calMetrics(); 
+	    std::cout <<"\nMemory Usage: "<<metrics.memoryUsage
+		    <<"\nCPU Usage: "<<metrics.cpuUsage
+		    <<"\nNetwork download speed: "<<metrics.download_speed
+		    <<"\nNetwork upload speed: "<<metrics.upload_speed<<std::endl;
 
-            memInfo mem=CollectMemoryInfo(); 
-	    displayMemStats(mem);
-	    displayCpuUsage();
-	    std::cout<<"Network Speed"<<std::endl;
-            displayNetSpeed();
 	    std::this_thread::sleep_for(std::chrono::seconds(2));	
 	}    
 	return 0;

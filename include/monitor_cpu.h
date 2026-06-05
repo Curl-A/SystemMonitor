@@ -8,7 +8,5 @@ struct cpuInfo{
 
 cpuInfo calCpuUsage();
 
-void displayCpuUsage();
-
 #endif
 

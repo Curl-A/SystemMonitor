@@ -8,6 +8,5 @@ struct netSpeed {
 
 netSpeed calNetSpeed();
 
-void displayNetSpeed();
 
 #endif
